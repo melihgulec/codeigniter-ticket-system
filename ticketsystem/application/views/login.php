@@ -33,7 +33,8 @@
           <input type="password" class="userpass" name="form_password" placeholder="Password">
           <p style="color:#2196F3">Did you forget your password ?</p>
           <input type="submit" class="loginbutton" value="LOGIN">
-        </form>
+        </form><br>
+        <small class="pull-right" style="color:#2196f3;">do you have an account? no? <a href="<?php echo base_url("register")?>">click here</a>.</small>
       </div>
     </div>
   </div>

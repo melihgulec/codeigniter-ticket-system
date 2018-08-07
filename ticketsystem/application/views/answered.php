@@ -52,7 +52,7 @@
 <div class="container">
     <div class="row">
             <div class="col-md-12">
-                <table class="table table-bordered table-hover table-striped">
+                <table class="table table-bordered table-hover table-striped" style="border:3px solid black";>
                     <thead>
                         <th class="text-center">Problem</th>
                         <th class="text-center">Product</th>

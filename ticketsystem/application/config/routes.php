@@ -56,3 +56,4 @@ $route['login']                = "login";
 $route['login-control']        = "login/loginControl";
 $route['ticket-insert']        = "ticket/insert";
 $route['logout']               = "login/logout";
+$route['userInsert']             = "register/register";

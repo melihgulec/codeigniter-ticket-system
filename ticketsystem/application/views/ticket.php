@@ -55,7 +55,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-15">
+    <div class="col-md-12">
   <form class="well form-horizontal" action="<?php echo base_url('ticket-insert')?>" method="post" id="contact_form">
     <fieldset>
       <!-- Form Name -->
