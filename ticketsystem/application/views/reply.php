@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <?php $this->load->view("dependencies/styles");?>
     <?php $this->load->view("dependencies/scripts");?>
-
   </head>
   <body>
     <script>
@@ -127,15 +127,32 @@
             </div>
           </div>
 
+<!-- Reply section -->
+
+        <hr>
+          <div class="container">
           <?php
             foreach($reply as $row){
           ?>
-         <hr>
-          <div class="panel panel-default">
-            <div class="panel-body" style="<?php if($row->user_auth == "1"){echo 'background-color:#f9dede';}  ?>"><b><?php if($row->user_auth == "1"){echo $row->user_username." - Support Team";} else {echo $row->user_username;} ?></b><label class="pull-right"><?php echo $row->reply_date ?></label></div>
-            <div class="panel-footer"><?php echo $row->reply_exp ?></div>
+          
+           <div class="col-md-2">
+             <div class="row" valign="center">
+                <img style="display:block; margin-left:auto; margin-right:auto;"src="<?php if($row->user_auth == "1"){echo base_url("assets/img/supteam.png");}else{echo base_url("assets/img/user.png");}  ?>" width="80" height="80">
+                <p style="font-size:15px; text-align:center"><br><?php if($row->user_auth == "1"){echo "<b>".$row->user_username."</b><br>Support Team";} else {echo $row->user_username;} ?></p>
+            </div>
+           </div>
+
+            <div class="col-md-9">
+              <div class="row">
+                <div class="jumbotron"><?php echo $row->reply_exp; ?></div>
+                <small><?php echo "replied at: ".$row->reply_date ?></small>
+                <hr>
+              </div>
+            </div>
+            <?php } ?>
           </div>
-      <?php } ?>
+
+<!-- Reply section end -->            
 
           <form action="<?php echo base_url("reply/insert") ?>" method="post">
             <div class="form-group">

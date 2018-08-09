@@ -1,4 +1,4 @@
- #playground-container {
+#playground-container {
     height: 500px;
     overflow: hidden !important;
     -webkit-overflow-scrolling: touch;
@@ -14,7 +14,7 @@ body, html{
 
 .main{
      margin:50px 15px;
-     margin-top:140px;
+     margin-top:250px;
 }
 
 h1.title { 

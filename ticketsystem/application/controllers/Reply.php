@@ -37,7 +37,7 @@ class Reply extends CI_Controller
     /*setlocale(LC_TIME,'turkish');
     $date = iconv('latin5','utf-8',strftime('%d %B %Y - %H:%M:%S'));*/
     
-    $date = strftime('%d %B %Y - %H:%M:%S');
+    $date = strftime('%d %B %Y - %H:%M');
 
     $this->form_validation->set_rules("reply_exp", "Explanation", "required");
     if($this->form_validation->run() == TRUE)

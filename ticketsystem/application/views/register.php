@@ -90,7 +90,6 @@
 						<div class="form-group ">
 							<button type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
 						</div>
-						
 					</form>
 				</div>
 			</div>

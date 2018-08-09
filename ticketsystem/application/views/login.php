@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/login.css")?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-3.3.7-dist/bootstrap.min.css")?>">
     <script src="<?php echo base_url('assets\js\sweetalert2.all.min.js')?>"></script>
   </head>
   <body>
@@ -31,10 +32,10 @@
         <form action="<?php echo base_url("login-control")?>" method="post">
           <input type="text" class="userid" name="form_username" placeholder="Username">
           <input type="password" class="userpass" name="form_password" placeholder="Password">
-          <p style="color:#2196F3">Did you forget your password ?</p>
+          <p style="color:#2196F3"><a href="<?php echo base_url("forgot") ?>" >Did you forget your password ?</a></p>
           <input type="submit" class="loginbutton" value="LOGIN">
         </form><br>
-        <small class="pull-right" style="color:#2196f3;">do you have an account? no? <a href="<?php echo base_url("register")?>">click here</a>.</small>
+        <small class="pull-right" style="color:#2196f3;">don't you have an account? no? <a href="<?php echo base_url("register")?>">click here</a>.</small>
       </div>
     </div>
   </div>

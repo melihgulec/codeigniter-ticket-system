@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 06 Ağu 2018, 00:51:25
+-- Üretim Zamanı: 09 Ağu 2018, 15:34:23
 -- Sunucu sürümü: 10.1.19-MariaDB
 -- PHP Sürümü: 5.6.28
 
@@ -56,9 +56,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`) VALUES
-(1, 'WOW Product'),
-(2, 'My Lovely Product'),
-(3, 'That''s Crazy'),
+(1, 'Y Product'),
+(2, 'Z Product'),
+(3, 'M Product'),
 (4, 'X CRM');
 
 -- --------------------------------------------------------
@@ -104,11 +104,11 @@ CREATE TABLE `tickets_reply` (
 --
 
 INSERT INTO `tickets_reply` (`id`, `ticket_id`, `reply_exp`, `user_id`, `reply_date`) VALUES
-(1, 1, 'Suspendisse potenti. Fusce lobortis vehicula ante, non luctus nisl vestibulum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio sed orci elementum malesuada id ac risus. Praesent lobortis erat augue, eget scelerisque arcu mollis nec. Aliquam porta dictum justo, rutrum porttitor ex tempus id. Vestibulum consectetur turpis dignissim justo aliquam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet ac justo quis ornare. Nullam aliquet quis nisl vitae rhoncus. Pellentesque sit amet nisi ut tellus porttitor commodo aliquet quis quam. Praesent dapibus malesuada ultrices. Quisque et hendrerit elit.\n\nSed ac tortor quam. Nunc ut odio sit amet elit mattis interdum quis vel nisi. Quisque malesuada sapien sed dui lobortis hendrerit. Sed vitae posuere ex. Duis malesuada molestie ligula, sed maximus tellus malesuada et. Pellentesque libero velit, tincidunt sit amet risus at, auctor imperdiet est. Mauris nec lorem metus. Aliquam vel gravida felis.', 1, '06 August 2018 - 00:13:57'),
-(2, 1, 'Mauris pellentesque fringilla tellus, a ultrices elit congue a. Quisque condimentum justo at magna rutrum, eget auctor tellus placerat. Donec feugiat orci sapien. Phasellus porttitor dapibus mi et scelerisque. Vivamus pellentesque mi pulvinar, luctus quam nec, pharetra ipsum. Suspendisse congue eget felis quis rhoncus.', 2, '06 August 2018 - 00:15:37'),
-(3, 1, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla quis velit tempus, pretium metus in, fermentum ligula. Vestibulum mattis diam magna, vitae hendrerit odio vulputate nec. Curabitur hendrerit sem efficitur nunc commodo sagittis. Cras at nibh ac ligula pulvinar gravida vel ut nunc. Sed a augue ex.', 2, '06 August 2018 - 00:26:01'),
-(4, 1, 'Mauris molestie aliquet eros eu semper. Suspendisse finibus felis neque, a blandit dui ullamcorper sit amet. Maecenas convallis semper vulputate. Phasellus in ligula et urna scelerisque convallis ac et sem. Cras ut eros est. Donec pretium ipsum vitae condimentum pretium. Nulla facilisi. Praesent non eros sit amet libero commodo molestie vel eu metus. ', 1, '06 August 2018 - 00:26:07'),
-(5, 1, 'Quisque ex leo, commodo ac mauris eu, congue egestas ex. Pellentesque congue, risus a euismod efficitur, lectus mauris placerat risus, et hendrerit erat neque id augue. Nulla nec tortor at tortor dapibus tincidunt in ac neque. Etiam nunc sapien, porttitor at fermentum eget, porttitor quis odio.', 2, '06 August 2018 - 00:27:15');
+(1, 1, 'Suspendisse potenti. Fusce lobortis vehicula ante, non luctus nisl vestibulum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio sed orci elementum malesuada id ac risus. Praesent lobortis erat augue, eget scelerisque arcu mollis nec. Aliquam porta dictum justo, rutrum porttitor ex tempus id. Vestibulum consectetur turpis dignissim justo aliquam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet ac justo quis ornare. Nullam aliquet quis nisl vitae rhoncus. Pellentesque sit amet nisi ut tellus porttitor commodo aliquet quis quam. Praesent dapibus malesuada ultrices. Quisque et hendrerit elit.\n\nSed ac tortor quam. Nunc ut odio sit amet elit mattis interdum quis vel nisi. Quisque malesuada sapien sed dui lobortis hendrerit. Sed vitae posuere ex. Duis malesuada molestie ligula, sed maximus tellus malesuada et. Pellentesque libero velit, tincidunt sit amet risus at, auctor imperdiet est. Mauris nec lorem metus. Aliquam vel gravida felis.', 1, '06 August 2018 - 00:13'),
+(2, 1, 'Mauris pellentesque fringilla tellus, a ultrices elit congue a. Quisque condimentum justo at magna rutrum, eget auctor tellus placerat. Donec feugiat orci sapien. Phasellus porttitor dapibus mi et scelerisque. Vivamus pellentesque mi pulvinar, luctus quam nec, pharetra ipsum. Suspendisse congue eget felis quis rhoncus.', 2, '06 August 2018 - 00:15'),
+(3, 1, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla quis velit tempus, pretium metus in, fermentum ligula. Vestibulum mattis diam magna, vitae hendrerit odio vulputate nec. Curabitur hendrerit sem efficitur nunc commodo sagittis. Cras at nibh ac ligula pulvinar gravida vel ut nunc. Sed a augue ex.', 2, '06 August 2018 - 00:26'),
+(4, 1, 'Mauris molestie aliquet eros eu semper. Suspendisse finibus felis neque, a blandit dui ullamcorper sit amet. Maecenas convallis semper vulputate. Phasellus in ligula et urna scelerisque convallis ac et sem. Cras ut eros est. Donec pretium ipsum vitae condimentum pretium. Nulla facilisi. Praesent non eros sit amet libero commodo molestie vel eu metus. ', 1, '06 August 2018 - 00:26'),
+(5, 1, 'Quisque ex leo, commodo ac mauris eu, congue egestas ex. Pellentesque congue, risus a euismod efficitur, lectus mauris placerat risus, et hendrerit erat neque id augue. Nulla nec tortor at tortor dapibus tincidunt in ac neque. Etiam nunc sapien, porttitor at fermentum eget, porttitor quis odio.', 2, '06 August 2018 - 00:27');
 
 -- --------------------------------------------------------
 
@@ -118,8 +118,11 @@ INSERT INTO `tickets_reply` (`id`, `ticket_id`, `reply_exp`, `user_id`, `reply_d
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `user_name` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   `user_username` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
   `user_pass` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `user_email` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
+  `hash` varchar(32) COLLATE utf8_turkish_ci NOT NULL,
   `user_auth` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
@@ -127,9 +130,9 @@ CREATE TABLE `users` (
 -- Tablo döküm verisi `users`
 --
 
-INSERT INTO `users` (`id`, `user_username`, `user_pass`, `user_auth`) VALUES
-(1, 'John Doe', '202cb962ac59075b964b07152d234b70', 1),
-(2, 'Brittany Sandoval', '202cb962ac59075b964b07152d234b70', 2);
+INSERT INTO `users` (`id`, `user_name`, `user_username`, `user_pass`, `user_email`, `hash`, `user_auth`) VALUES
+(1, 'Melih Güleç', 'admin', '202cb962ac59075b964b07152d234b70', 'melih.gulec14@gmail.com', 'GLn4ToWuNh7tgdMRyI0Op9kScAP18e5H', 1),
+(2, 'User Name', 'user', '202cb962ac59075b964b07152d234b70', 'melih.gulec15@gmail.com', 'uTGzgQUMhyldt1AripRnEexcPwO4fJs3', 2);
 
 --
 -- Dökümü yapılmış tablolar için indeksler

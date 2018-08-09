@@ -13,8 +13,14 @@ class Register extends CI_Controller
         $this->load->view("register");
     }
 
+    function createHash($length) {
+        $chars = 'qwertyuopasdfghjklizxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+        return substr(str_shuffle($chars), 0, $length);
+    }
+
     public function register()
     {
+        $hash = $this->createHash(32);
         $username = $this->form_validation->set_rules("username","Username","required|trim");
         $name     = $this->form_validation->set_rules("name", "Name", "required|trim");
         $email    = $this->form_validation->set_rules("email", "Email", "required|trim");
@@ -49,6 +55,7 @@ class Register extends CI_Controller
                         "user_username" => $username,
                         "user_pass"     => $password,
                         "user_email"    => $email,
+                        "hash"          => $hash,
                         "user_auth"     => "2"
                     ));
                 }
