@@ -5,10 +5,12 @@ class Sent extends CI_Controller
   {
     parent::__construct();
     $this->load->model("sent_model");
+    $this->load->helper("authentication_helper");
   }
 
   public function index()
   {
+    user_verify_session();
     $result = $this->sent_model->getRows(array(
       "users.id" => $this->session->userdata("user_id")
     ));
@@ -17,6 +19,5 @@ class Sent extends CI_Controller
 
     $this->load->view("sent", $viewData);
   }
-
 }
 ?>

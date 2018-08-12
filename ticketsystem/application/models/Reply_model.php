@@ -8,7 +8,7 @@ class Reply_model extends CI_Model
 
   public function getTicket($where = array())
   {
-    $this->db->select('tickets.id AS ticket_id, users.user_auth, categories.categorie, products.product_name, users.user_username, tickets.ticket_title, tickets.ticket_exp, tickets.ticket_date');
+    $this->db->select('tickets.id AS ticket_id, tickets.attachments, users.user_auth, categories.categorie, products.product_name, users.user_username, tickets.ticket_title, tickets.ticket_exp, tickets.ticket_date');
     $this->db->from('tickets');
     $this->db->where($where);
     $this->db->join('users', 'users.id = tickets.user_id', "INNER");
@@ -19,7 +19,7 @@ class Reply_model extends CI_Model
 
   public function getReplys($where)
   {
-    $this->db->select("users.user_auth, tickets_reply.reply_exp, users.user_username, tickets.ticket_date, tickets_reply.reply_date");
+    $this->db->select("tickets_reply.attachments, users.user_name, users.user_auth, tickets_reply.reply_exp, users.user_username, tickets.ticket_date, tickets_reply.reply_date");
     $this->db->from('tickets_reply');
     $this->db->where($where);
     $this->db->join('users', 'users.id = tickets_reply.user_id', "INNER");

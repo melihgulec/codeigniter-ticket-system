@@ -84,7 +84,7 @@
                            <?php echo $row->ticket_date; ?>
                          </td>
                          <td class="text-center">
-                           <a href="<?php echo base_url("reply/getTicketDetails/$row->ticket_id");?>" class="btn btn-primary">See</a>
+                           <a href="<?php echo base_url("reply/getTicket/$row->ticket_id");?>" class="btn btn-primary">See</a>
                          </td>
                      </tr>
                  <?php } ?>

@@ -90,10 +90,10 @@
 
                               if($row->ticket_status == 1)
                               {
-                                echo "Answered";?><br><br><form action="<?php echo base_url("reply/getTicketDetails/$row->ticket_id");?>"><input type="submit" class="btn btn-danger" value="See"></form><?php
+                                echo "Answered";?><br><br><form action="<?php echo base_url("reply/getTicket/$row->ticket_id");?>"><input type="submit" class="btn btn-danger" value="See"></form><?php
                               }
                               else {
-                                echo "Awaiting Response"?><br><br><form action="<?php echo base_url("reply/getTicketDetails/$row->ticket_id");?>"><input type="submit" class="btn btn-primary" value="See"></form><?php
+                                echo "Awaiting Response"?><br><br><form action="<?php echo base_url("reply/getTicket/$row->ticket_id");?>"><input type="submit" class="btn btn-primary" value="See"></form><?php
                               }
                               ?>
                          </td>

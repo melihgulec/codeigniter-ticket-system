@@ -8,7 +8,7 @@ class Ticket extends CI_Controller
 
     $this->load->model("ticket_model");
     $this->load->helper("swal_helper");
-
+    $this->load->helper("authentication_helper");
   }
 
   public $get_categories;
@@ -29,8 +29,42 @@ class Ticket extends CI_Controller
 
   public function index()
   {
+      user_verify_session();
       $this->get_all();
       $this->load->view("ticket", $this->v_data);
+  }
+
+  function getLast_id(){
+    $result = $this->db->order_by("id", "DESC")->get("tickets")->row();
+    return $result->id;
+  }
+
+
+  function upload()
+  {
+    $last = $this->getLast_id() + 1;
+    if($_FILES['userfile']['name'] != "") {
+
+        $config['upload_path']          = "uploads/";
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $last;
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('userfile'))
+        {
+          echo $this->upload->display_errors();
+        }
+        else{
+          echo $this->db->insert_id();
+        }
+
+        $data = $last.".png";
+        return $data;
+    }
+    else{
+      $data = "null";
+      return $data;
+    }
   }
 
   public function insert()
@@ -56,7 +90,8 @@ class Ticket extends CI_Controller
           "product_id"    => $product_arr[0],
           "ticket_title"  => $title,
           "ticket_exp"    => $exp,
-          "ticket_status" => "0"
+          "ticket_status" => "0",
+          "attachments"   => $this->upload()
         )
       );
 

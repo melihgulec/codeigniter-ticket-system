@@ -127,6 +127,25 @@
             </div>
           </div>
 
+
+          <?php
+
+              if($data->attachments != "null")
+              {
+                ?> 
+                  <div class="form-group">
+                    <label class="col-md-4 control-label">Attachments</label>
+                    <div class="col-md-6 inputGroupContainer">
+                      <div class="input-group">
+                        <a style="position:relative; top:7px;" href="<?php echo base_url("uploads/".$data->attachments)?>" download><?php if($data->attachments != "null"){echo $data->attachments;} ?></a></p>
+                      </div>
+                    </div>
+                  </div>
+                <?php
+              }
+
+          ?>
+
 <!-- Reply section -->
 
         <hr>
@@ -138,13 +157,14 @@
            <div class="col-md-2">
              <div class="row" valign="center">
                 <img style="display:block; margin-left:auto; margin-right:auto;"src="<?php if($row->user_auth == "1"){echo base_url("assets/img/supteam.png");}else{echo base_url("assets/img/user.png");}  ?>" width="80" height="80">
-                <p style="font-size:15px; text-align:center"><br><?php if($row->user_auth == "1"){echo "<b>".$row->user_username."</b><br>Support Team";} else {echo $row->user_username;} ?></p>
+                <p style="font-size:15px; text-align:center"><br><?php if($row->user_auth == "1"){echo "<b>".$row->user_name."</b><br>Support Team";} else {echo $row->user_name;} ?></p>
             </div>
            </div>
 
             <div class="col-md-9">
               <div class="row">
                 <div class="jumbotron"><?php echo $row->reply_exp; ?></div>
+                <a href="<?php echo base_url("uploads/".$row->attachments) ?>" download><?php if($row->attachments != "null"){echo $row->attachments;} ?></a>
                 <small><?php echo "replied at: ".$row->reply_date ?></small>
                 <hr>
               </div>
@@ -154,7 +174,7 @@
 
 <!-- Reply section end -->            
 
-          <form action="<?php echo base_url("reply/insert") ?>" method="post">
+          <form action="<?php echo base_url("reply/insert") ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label class="col-md-4 control-label">Your answer</label>
               <div class="col-md-4 inputGroupContainer">
@@ -168,7 +188,8 @@
             <div class="form-group">
               <label class="col-md-4 control-label"></label>
               <div class="col-md-4">
-                <input type="submit" class="btn btn-primary" value="Send"></button>
+                <input type="submit" class="btn btn-primary" value="Send"></button><br><br>
+                <input type="file" name="userfile" accept="image/x-png" style="margin-bottom:5px;">
               </div>
               </div>
             </div>

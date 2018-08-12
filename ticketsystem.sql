@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 09 Ağu 2018, 15:34:23
+-- Üretim Zamanı: 12 Ağu 2018, 02:38:15
 -- Sunucu sürümü: 10.1.19-MariaDB
 -- PHP Sürümü: 5.6.28
 
@@ -75,15 +75,16 @@ CREATE TABLE `tickets` (
   `product_id` int(11) NOT NULL,
   `ticket_exp` text COLLATE utf8_turkish_ci NOT NULL,
   `ticket_title` text COLLATE utf8_turkish_ci NOT NULL,
-  `ticket_status` int(11) NOT NULL
+  `ticket_status` int(11) NOT NULL,
+  `attachments` varchar(40) COLLATE utf8_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
 -- Tablo döküm verisi `tickets`
 --
 
-INSERT INTO `tickets` (`id`, `user_id`, `ticket_date`, `categorie_id`, `product_id`, `ticket_exp`, `ticket_title`, `ticket_status`) VALUES
-(1, 2, '2018-08-06', '1', 1, 'Sed molestie purus lacus, sit amet eleifend augue sagittis id. In in purus suscipit, sagittis velit a, porta enim. Curabitur non eros vitae eros pretium auctor a et justo. Quisque ut urna aliquet, volutpat massa sed, tristique risus. Sed efficitur mauris vel nibh consectetur rutrum. Donec lacus leo, mattis eu ligula a, volutpat consectetur diam. Morbi et neque vel sapien finibus pretium. Phasellus vestibulum viverra faucibus. Sed vitae quam euismod, luctus elit ac, egestas eros. Quisque ex leo, commodo ac mauris eu, congue egestas ex. Pellentesque congue, risus a euismod efficitur, lectus mauris placerat risus, et hendrerit erat neque id augue.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis dui eget felis mollis iaculis. ', 0);
+INSERT INTO `tickets` (`id`, `user_id`, `ticket_date`, `categorie_id`, `product_id`, `ticket_exp`, `ticket_title`, `ticket_status`, `attachments`) VALUES
+(1, 2, '2018-08-06', '1', 1, 'Sed molestie purus lacus, sit amet eleifend augue sagittis id. In in purus suscipit, sagittis velit a, porta enim. Curabitur non eros vitae eros pretium auctor a et justo. Quisque ut urna aliquet, volutpat massa sed, tristique risus. Sed efficitur mauris vel nibh consectetur rutrum. Donec lacus leo, mattis eu ligula a, volutpat consectetur diam. Morbi et neque vel sapien finibus pretium. Phasellus vestibulum viverra faucibus. Sed vitae quam euismod, luctus elit ac, egestas eros. Quisque ex leo, commodo ac mauris eu, congue egestas ex. Pellentesque congue, risus a euismod efficitur, lectus mauris placerat risus, et hendrerit erat neque id augue.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis dui eget felis mollis iaculis. ', 0, '');
 
 -- --------------------------------------------------------
 
@@ -96,19 +97,20 @@ CREATE TABLE `tickets_reply` (
   `ticket_id` int(11) NOT NULL,
   `reply_exp` text COLLATE utf8_turkish_ci NOT NULL,
   `user_id` int(11) NOT NULL,
-  `reply_date` text COLLATE utf8_turkish_ci NOT NULL
+  `reply_date` text COLLATE utf8_turkish_ci NOT NULL,
+  `attachments` varchar(20) COLLATE utf8_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
 -- Tablo döküm verisi `tickets_reply`
 --
 
-INSERT INTO `tickets_reply` (`id`, `ticket_id`, `reply_exp`, `user_id`, `reply_date`) VALUES
-(1, 1, 'Suspendisse potenti. Fusce lobortis vehicula ante, non luctus nisl vestibulum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio sed orci elementum malesuada id ac risus. Praesent lobortis erat augue, eget scelerisque arcu mollis nec. Aliquam porta dictum justo, rutrum porttitor ex tempus id. Vestibulum consectetur turpis dignissim justo aliquam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet ac justo quis ornare. Nullam aliquet quis nisl vitae rhoncus. Pellentesque sit amet nisi ut tellus porttitor commodo aliquet quis quam. Praesent dapibus malesuada ultrices. Quisque et hendrerit elit.\n\nSed ac tortor quam. Nunc ut odio sit amet elit mattis interdum quis vel nisi. Quisque malesuada sapien sed dui lobortis hendrerit. Sed vitae posuere ex. Duis malesuada molestie ligula, sed maximus tellus malesuada et. Pellentesque libero velit, tincidunt sit amet risus at, auctor imperdiet est. Mauris nec lorem metus. Aliquam vel gravida felis.', 1, '06 August 2018 - 00:13'),
-(2, 1, 'Mauris pellentesque fringilla tellus, a ultrices elit congue a. Quisque condimentum justo at magna rutrum, eget auctor tellus placerat. Donec feugiat orci sapien. Phasellus porttitor dapibus mi et scelerisque. Vivamus pellentesque mi pulvinar, luctus quam nec, pharetra ipsum. Suspendisse congue eget felis quis rhoncus.', 2, '06 August 2018 - 00:15'),
-(3, 1, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla quis velit tempus, pretium metus in, fermentum ligula. Vestibulum mattis diam magna, vitae hendrerit odio vulputate nec. Curabitur hendrerit sem efficitur nunc commodo sagittis. Cras at nibh ac ligula pulvinar gravida vel ut nunc. Sed a augue ex.', 2, '06 August 2018 - 00:26'),
-(4, 1, 'Mauris molestie aliquet eros eu semper. Suspendisse finibus felis neque, a blandit dui ullamcorper sit amet. Maecenas convallis semper vulputate. Phasellus in ligula et urna scelerisque convallis ac et sem. Cras ut eros est. Donec pretium ipsum vitae condimentum pretium. Nulla facilisi. Praesent non eros sit amet libero commodo molestie vel eu metus. ', 1, '06 August 2018 - 00:26'),
-(5, 1, 'Quisque ex leo, commodo ac mauris eu, congue egestas ex. Pellentesque congue, risus a euismod efficitur, lectus mauris placerat risus, et hendrerit erat neque id augue. Nulla nec tortor at tortor dapibus tincidunt in ac neque. Etiam nunc sapien, porttitor at fermentum eget, porttitor quis odio.', 2, '06 August 2018 - 00:27');
+INSERT INTO `tickets_reply` (`id`, `ticket_id`, `reply_exp`, `user_id`, `reply_date`, `attachments`) VALUES
+(1, 1, 'Suspendisse potenti. Fusce lobortis vehicula ante, non luctus nisl vestibulum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in odio sed orci elementum malesuada id ac risus. Praesent lobortis erat augue, eget scelerisque arcu mollis nec. Aliquam porta dictum justo, rutrum porttitor ex tempus id. Vestibulum consectetur turpis dignissim justo aliquam tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet ac justo quis ornare. Nullam aliquet quis nisl vitae rhoncus. Pellentesque sit amet nisi ut tellus porttitor commodo aliquet quis quam. Praesent dapibus malesuada ultrices. Quisque et hendrerit elit.\n\nSed ac tortor quam. Nunc ut odio sit amet elit mattis interdum quis vel nisi. Quisque malesuada sapien sed dui lobortis hendrerit. Sed vitae posuere ex. Duis malesuada molestie ligula, sed maximus tellus malesuada et. Pellentesque libero velit, tincidunt sit amet risus at, auctor imperdiet est. Mauris nec lorem metus. Aliquam vel gravida felis.', 1, '06 August 2018 - 00:13', '1-1.png'),
+(2, 1, 'Mauris pellentesque fringilla tellus, a ultrices elit congue a. Quisque condimentum justo at magna rutrum, eget auctor tellus placerat. Donec feugiat orci sapien. Phasellus porttitor dapibus mi et scelerisque. Vivamus pellentesque mi pulvinar, luctus quam nec, pharetra ipsum. Suspendisse congue eget felis quis rhoncus.', 2, '06 August 2018 - 00:15', ''),
+(3, 1, 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla quis velit tempus, pretium metus in, fermentum ligula. Vestibulum mattis diam magna, vitae hendrerit odio vulputate nec. Curabitur hendrerit sem efficitur nunc commodo sagittis. Cras at nibh ac ligula pulvinar gravida vel ut nunc. Sed a augue ex.', 2, '06 August 2018 - 00:26', ''),
+(4, 1, 'Mauris molestie aliquet eros eu semper. Suspendisse finibus felis neque, a blandit dui ullamcorper sit amet. Maecenas convallis semper vulputate. Phasellus in ligula et urna scelerisque convallis ac et sem. Cras ut eros est. Donec pretium ipsum vitae condimentum pretium. Nulla facilisi. Praesent non eros sit amet libero commodo molestie vel eu metus. ', 1, '06 August 2018 - 00:26', ''),
+(5, 1, 'Quisque ex leo, commodo ac mauris eu, congue egestas ex. Pellentesque congue, risus a euismod efficitur, lectus mauris placerat risus, et hendrerit erat neque id augue. Nulla nec tortor at tortor dapibus tincidunt in ac neque. Etiam nunc sapien, porttitor at fermentum eget, porttitor quis odio.', 2, '06 August 2018 - 00:27', '');
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `user_name`, `user_username`, `user_pass`, `user_email`, `hash`, `user_auth`) VALUES
 (1, 'Melih Güleç', 'admin', '202cb962ac59075b964b07152d234b70', 'melih.gulec14@gmail.com', 'GLn4ToWuNh7tgdMRyI0Op9kScAP18e5H', 1),
-(2, 'User Name', 'user', '202cb962ac59075b964b07152d234b70', 'melih.gulec15@gmail.com', 'uTGzgQUMhyldt1AripRnEexcPwO4fJs3', 2);
+(2, 'User Name', 'user', '202cb962ac59075b964b07152d234b70', 'melih.gulec15@gmail.com', 'uTGzgQUMhyldt1AripRnEexcPwO4fJs3', 2),
+(3, 'Test User', 'user2', '202cb962ac59075b964b07152d234b70', 'abc@gmail.com', 'boRfeO4l1CuQsnFV5ZzWP9Y6hSd3wEv7', 2);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -186,7 +189,7 @@ ALTER TABLE `products`
 -- Tablo için AUTO_INCREMENT değeri `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Tablo için AUTO_INCREMENT değeri `tickets_reply`
 --
@@ -196,7 +199,7 @@ ALTER TABLE `tickets_reply`
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -56,7 +56,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-  <form class="well form-horizontal" action="<?php echo base_url('ticket-insert')?>" method="post" id="contact_form">
+  <form class="well form-horizontal" action="<?php echo base_url('ticket-insert')?>" method="post" id="contact_form" enctype="multipart/form-data">
     <fieldset>
       <!-- Form Name -->
       <legend>Company Name</legend>
@@ -123,7 +123,9 @@
       <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-4">
-          <input type="submit" class="btn btn-primary" value="Send"></button></form>
+          <input type="submit" class="btn btn-primary" value="Send"></button><br><br>
+          <input type="file" name="userfile" accept="image/x-png">
+        </form>
         </div>
       </div>
   </fieldset>
